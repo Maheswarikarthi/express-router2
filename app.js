@@ -4,9 +4,11 @@ const userRouter=require('./home')
 const aboutRouter=require('./about')
 const contactRouter=require('./contact')
 const serviceRouter=require('./service')
-
+app.set('view engine','ejs')
+app.use(express.urlencoded({extended:true}))
 app.get('/',(request,response)=>{
-    response.send("hello")
+    //response.send("hello")
+    response.render('index')
 })
 app.use('/home',userRouter)
 app.use('/about',aboutRouter)

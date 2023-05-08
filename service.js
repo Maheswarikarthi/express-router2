@@ -1,5 +1,13 @@
 const express=require('express')
 const serviceRouter=express.Router()
+serviceRouter.get('/',(req,res)=>{
+    res.send("User Page")
+  })
+  serviceRouter.get('/new',(req,res)=>{
+    res.render('services/new')
+  })
+  
+  
 const listOfUsers=[
     {
         
@@ -34,9 +42,9 @@ serviceRouter.param('id',(request,response,next,id)=>{
 
 
 
-serviceRouter.get('/',(request,response)=>{
-    response.send("this is service page")
-})
+//serviceRouter.get('/',(request,response)=>{
+    //response.send("this is service page")
+//})
 module.exports=serviceRouter
 
 
